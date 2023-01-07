@@ -173,3 +173,8 @@ body {
       justify-content: center;
     }
   }
+
+  .form_error{
+    color: red;
+    padding: 4px 0px;
+  }
