@@ -94,7 +94,7 @@ section .main .main_content .main_text h1{
 }
 
 section .main .main_content .main_text h1 span {
-    font-size: 70;
+    font-size: 70px;
     background: linear-gradient(to right, #000000, #bbe116);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -102,7 +102,7 @@ section .main .main_content .main_text h1 span {
 
 section .main .main_content .main_text p {
     width: 600px;
-    text-align: jusitfy;
+    text-align: justify;
     line-height: 21px;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -112,7 +112,7 @@ section .main .main_content .main_image img {
     width: 500px;
     position: relative;
     left: 20px;
-    top 75px;
+    top: 75px;
 }
 
 section .main .social_icon {
@@ -278,11 +278,19 @@ section .main .button:hover i {
 }
 
 /* styles to be applied for devices w/ width <= 768 */
-/* @media (max-width: 768px) { */
-/*     p { */
-/*        color: red; */
-/*     } */
-/* } */
+ @media (max-width: 768px) { 
+     section .main .main_content .main_image img {
+        display: none;
+     }
+
+    section .main .social_icon {
+        display: none;
+    }
+    
+    section .main .main_content .main_text h1 {
+         
+    }
+} 
 
 /* styles to be applied for devices w/ width <= 1024 */
 /* @media (max-width: 1024px) { */
