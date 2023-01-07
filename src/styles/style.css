@@ -65,7 +65,7 @@ nav ul li a:hover {
 nav .icons i {
     margin: 0 4px;
     cursor: pointer;
-    font-size 18px;
+    font-size :18px;
     transition: 0.3s;
 }
 
@@ -236,7 +236,7 @@ section .main .button:hover i {
 .products .box .card .small_card i {
     width: 45px;
     height: 45px;
-    border-radius 5px;
+    border-radius:5px;
     font-size: 18px;
     margin: 2px 0;
     line-height: 40px;
