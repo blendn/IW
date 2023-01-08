@@ -225,6 +225,9 @@ section .main .button:hover i {
 
 /* styles to be applied for devices w/ width <= 320 */
 @media (max-width: 320px) {
+    nav .logo h1, span {
+        font-size: 30px;
+    }
     .main_text h1, .main_text span {
         font-size: 42px;
     }
@@ -235,6 +238,9 @@ section .main .button:hover i {
 }
 /* styles to be applied for devices w/ width <= 768 */
  @media (max-width: 768px) { 
+    nav .logo h1, span {
+        font-size: 30px;
+    }
     .main_text h1, .main_text span {
         font-size: 42px;
     }
@@ -242,6 +248,7 @@ section .main .button:hover i {
     .main_text p {
         width: 90vw;
     }
+    
     section .main .main_content .main_image img {
         display: none;
     }
@@ -261,4 +268,11 @@ section .main .button:hover i {
 
 /* styles to be applied for devices w/ width <= 1024 */
 @media (max-width: 1024px) {
+     section .main .main_content .main_image img {
+        display: none;
+    }
+    
+    section .main .social_icon {
+        display: none;
+    }
 }
