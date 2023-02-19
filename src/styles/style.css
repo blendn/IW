@@ -33,6 +33,7 @@ section .main .main_content {
     font-family: sans-serif;
     background: linear-gradient(to right, #000000, #bbe116);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -40,6 +41,7 @@ section .main .main_content {
     font-size: 70px;
     background: linear-gradient(to right, #000000, #bbe116);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -102,7 +104,6 @@ section .main .button:hover i {
 
 .products {
     width: 100%;
-    height: 140vh;
     padding: 25px 0;
 }
 
@@ -115,6 +116,7 @@ section .main .button:hover i {
     text-transform: uppercase;
     background: linear-gradient(to right, #000000, #bbe116);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -222,6 +224,63 @@ section .main .button:hover i {
     color: white;
 }
 
+/*Footer*/
+
+footer {
+    width: 100%;
+}
+
+footer .footer_main {
+    width: 100%;
+    background: #f3f1f1;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .footer_main .tag {
+    margin: 10px 0;
+}
+
+footer .footer_main .tag h1 {
+    font-size: 25px;
+    margin: 25px 0;
+    color:#bbe116;
+
+}
+
+footer .footer_main .tag a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 9px 0;
+}
+
+footer .footer_main .tag a i {
+    padding: 0 10px;
+    transition: 0.3;
+}
+
+footer .footer_main .tag a i:hover {
+    color: #bbe116;
+}
+
+footer .footer_main .tag .social_link {
+    display: flex;
+}
+
+footer .footer_main .tag .social_link a {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    margin: 0 5px;
+    z-index: 10;
+    overflow: hidden;
+}
 
 /* styles to be applied for devices w/ width <= 320 */
 @media (max-width: 320px) {
@@ -255,10 +314,6 @@ section .main .button:hover i {
 
     section .main .social_icon {
         display: none;
-    }
-    
-    section .main .main_content .main_text h1 {
-         
     }
 
     .products .box {
