@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 html {
@@ -58,24 +59,6 @@ section .main .main_content .main_image img {
     position: relative;
     left: 20px;
     top: 75px;
-}
-
-section .main .social_icon {
-    position: absolute;
-    top: 50%; 
-    left: 98%;
-    transform: translate(-50%, -50%);
-    font-size: 19px;
-}
-
-section .main .social_icon i {
-    margin: 8px 0;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-section .main .social_icon i:hover {
-    color: #bbe116;
 }
 
 section .main .button {
@@ -168,6 +151,7 @@ section .main .button:hover i {
     width: 150px;
     margin: 15px 0;
     transition: 0.2s;
+    cursor: pointer;
 }
 
 
@@ -312,10 +296,6 @@ footer .footer_main .tag .social_link a {
         display: none;
     }
 
-    section .main .social_icon {
-        display: none;
-    }
-
     .products .box {
         grid-template-columns: 1fr 1fr;
     }
@@ -324,10 +304,6 @@ footer .footer_main .tag .social_link a {
 /* styles to be applied for devices w/ width <= 1024 */
 @media (max-width: 1024px) {
      section .main .main_content .main_image img {
-        display: none;
-    }
-    
-    section .main .social_icon {
         display: none;
     }
 }
