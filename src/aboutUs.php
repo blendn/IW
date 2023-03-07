@@ -10,31 +10,12 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/about.css">
-    <link rel="stylesheet" type="text/css" href="styles/header.css">
 
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1>Dusty Headphone<span>s</span></h1>
-        </div>
-
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#Products">Products</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="login.html">Log In</a></li>
-        </ul>
-
-        <div class="icons">
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </nav>
+    
+    <?php include 'components/nav.php'; ?>
 
     <div class="section">
         <div class="container">
@@ -75,45 +56,7 @@
         </div>
     </div>
 
-    <!--Footer-->
-
-    <footer>
-        <div class="footer_main">
-            <div class="tag">
-                <h1>Contact</h1>
-                <a href="#"><i class="fa-solid fa-house"></i>123/Ferizaj/Kosovo</a>
-                <a href="#"><i class="fa-solid fa-phone"></i>+1 505-904-1582</a>
-                <a href="#"><i class="fa-solid fa-envelope"></i>contact@gmail.com</a>
-            </div>
-
-            <div class="tag">
-                <h1>Get Help</h1>
-                <a href="#" class="center">FAQ</a>
-                <a href="#" class="center">Shipping</a>
-                <a href="#" class="center">Returns</a>
-                <a href="#" class="center">Payments Options</a>
-            </div>
-
-            <div class="tag">
-                <h1>Our Headquarters</h1>
-                <a href="#" class="center">Kosovo</a>
-                <a href="#" class="center">USA</a>
-                <a href="#" class="center">Germany</a>
-                <a href="#" class="center">Japan</a>
-            </div>
-
-            <div class="tag">
-                <h1>Follow Us</h1>
-                <div class="social_link">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>              
-            </div>
-
-        </div>
-    </footer>
+    <?php include 'components/footer.php'; ?>
 
 </body>
 

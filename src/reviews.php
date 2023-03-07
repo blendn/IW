@@ -7,38 +7,16 @@
     <title>Costumer's Reviews</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/reviews.css">
-    <link rel="stylesheet" href="styles/header.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1>Dusty Headphone<span>s</span></h1>
-        </div>
 
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#Products">Products</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="login.html">Log In</a></li>
-        </ul>
-
-        <div class="icons">
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </nav>
+    <?php include 'components/nav.php'; ?>
 
     <section id="testimonials">
 
@@ -115,7 +93,7 @@
                 <div class="box-top">
                     <div class="profile">
                         <div class="profile-img">
-                            <img src="images/reviewers/r3.jpg" />
+                            <img src="images/reviewers/r3.jpeg" />
                         </div>
                         <div class="name-user">
                             <strong>Rose Greene</strong>
@@ -177,46 +155,8 @@
 
     </section>
 
-    <!--Footer-->
-
-    <footer>
-        <div class="footer_main">
-            <div class="tag">
-                <h1>Contact</h1>
-                <a href="#"><i class="fa-solid fa-house"></i>123/Ferizaj/Kosovo</a>
-                <a href="#"><i class="fa-solid fa-phone"></i>+1 505-904-1582</a>
-                <a href="#"><i class="fa-solid fa-envelope"></i>contact@gmail.com</a>
-            </div>
-
-            <div class="tag">
-                <h1>Get Help</h1>
-                <a href="#" class="center">FAQ</a>
-                <a href="#" class="center">Shipping</a>
-                <a href="#" class="center">Returns</a>
-                <a href="#" class="center">Payments Options</a>
-            </div>
-
-            <div class="tag">
-                <h1>Our Headquarters</h1>
-                <a href="#" class="center">Kosovo</a>
-                <a href="#" class="center">USA</a>
-                <a href="#" class="center">Germany</a>
-                <a href="#" class="center">Japan</a>
-            </div>
-
-            <div class="tag">
-                <h1>Follow Us</h1>
-                <div class="social_link">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>              
-            </div>
-
-        </div>
-    </footer>
-
+    <?php include 'components/footer.php'; ?>
+    
 </body>
 
 </html>
