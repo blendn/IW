@@ -1,7 +1,11 @@
 <?php 
-$db_conn = mysqli_connect('localhost', 'seneca', 'lettersfromastoic', 'dusty_headphones');
-$result = $db_conn->query('SELECT * FROM headphone');
-$rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
+require_once 'core/init.php';
+
+$instance = DB::getInstance();
+
+$instance->query("SELECT * FROM headphone");
+
+$rows = $instance->results();
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +15,7 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta name="description" content="Headphone Shop">
     <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>Dusty Headphones</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="images/logo.png">
@@ -63,22 +67,15 @@ $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
     ?>
             <div class="card">
                 <div class="image">
-                    <img src=<?php echo "images/h" . $headphone["id"] . ".jpg"?>>
+                    <img src=<?php echo "images/h" . $headphone->id . ".jpg"?>>
                 </div>
 
                 <div class="products_text">
-                    <h2><?php echo $headphone["manufacturer"] ?></h2>
+                    <h2><?php echo $headphone->manufacturer ?></h2>
                     <p>
-                        <?php echo $headphone["name"]?>
+                        <?php echo $headphone->name?>
                     </p>
-                    <h3><?php echo $headphone["price"] ?>$</h3>
-                    <div class="products_star">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
+                    <h3><?php echo $headphone->price ?>$</h3>
                 </div>
             </div>
     <?php

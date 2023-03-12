@@ -1,80 +1,73 @@
+<?php
+    require_once 'core/init.php';
+
+    if (Input::exists()) {
+        if (Token::check(Input::get('token'))) {
+
+            $validate = new Validate();
+            $validation = $validate->check($_POST, array(
+                'email' => array('required' => true),
+                'password' => array('required' => true)
+            ));
+
+            if ($validation->passed()) {
+                $user = new User();
+
+                $remember = (Input::get('remember') === 'on') ? true : false;
+                $login = $user->login(Input::get('email'), Input::get('password'), $remember);
+
+                if ($login) {
+                    Redirect::to('index.php');
+                } else {
+                    echo '<p>Sorry login failed!</p>';
+                }
+            } else {
+                foreach ($validation->errors() as $error) {
+                    echo $error, '<br>';
+                }
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log In</title>
+        <link rel="stylesheet" href="styles/login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-box">
+                <h1 id="title">Log In</h1>
+                <form name="form" onsubmit="return validated()" method="post">
+                    <div class="input-group"> 
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="text" placeholder="Email" name="email" autocomplete="off">
+                        </div>
+						<div id="email_error">Please fill up your Email!</div>
 
-<head>
-  <link rel="stylesheet" href="styles/login.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Login</title>
-  <style></style>
-</head>
-
-<body>
-  <div class="container">
-    <div class="content_share">
-      <div class="image_content">
-        <div class="image_content_me">
-          <h1>Dusty Headphones</h1>
-          <p>We present the new technology of HeadPhones!</p>
-        </div>
-        <img src="images/phones.png"></img>
-      </div>
-    </div>
-    <div class="content_share">
-      <div class="login_content">
-        <h1 class="login_content_heading_1">Log in</h1>
-        <p class="login_content_paragraph">
-          Welcome back! Login with your data that you entered during
-          registration!
-        </p>
-        <div class="login_content_login_buttons">
-          <button class="login_content_login_button"><i class="fa fa-google mr-4 color-red"> </i>Login with
-            Google</button>
-          <button class="login_content_login_button"><i class="fa fa-facebook mr-4 color-blue"></i>Login with
-            Facebook</button>
-          <div class="hr_main">
-            <span class="custom_hr"></span> <span>or</span>
-            <span class="custom_hr"></span>
-          </div>
-        </div>
-        <form id="form">
-          <div class="form_inputs">
-            <label class="form_input">
-              <i class="fa fa-envelope"></i>
-              <div class="form_input_div">
-                <span class="form_input_span">Email</span>
-                <input name="email" type="email" id="email" placeholder="johndoe@example.com" class="form_input_input"></input>
-              </div>
-            </label>
-            <div class="form_error" id="email_error">
-
+                        <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Password" name="password">
+                        </div>
+						<div id="password_error">Please fill up your Password!</div>
+                        <div>
+                            <label for="remember">
+                                <input type="checkbox" name="remember" id="remember"> Remember me
+                            </label>
+                        </div>
+                        <p>Don't have an account? <a href="register.php">Register Here!</p>
+                    </div>
+					<div class="btn-field"> 
+						<button type="submit" id="logInBtn">Log In</button>
+					</div>
+                    <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+                </form>	
             </div>
-            <label class="form_input">
-              <i class="fa fa-unlock-alt"></i>
-              <div class="form_input_div">
-                <span class="form_input_span">Password</span>
-                <input name="password" id="password" type="password" class="form_input_input"
-                  placeholder="********"></input>
-              </div>
-            </label>
-            <div class="form_error" id="password_error">
-
-            </div>
-          </div>
-          <div class="form_rememberMe">
-            <label class="form_rememberMe">
-              <input name="password" type="checkbox" class="form_remmeberMe_input"></input>
-              Remember Me
-            </label>
-            <a href="#" class="form_link">
-              Forgot Password?
-            </a>
-          </div>
-          <button class="form_submit_button">Login</a>
-        </form>
-      </div>
-      <div class="login_content_register">Don't have an account? <a href="#" class="form_link">Register</a></div>
-    </div>
-  </div>
-</body>
-<script src="login.js"></script>
+        </div>
+		<script src="js/validation.js"></script>
+    </body>
 </html>

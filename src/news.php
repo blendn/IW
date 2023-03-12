@@ -1,3 +1,12 @@
+<?php
+require_once 'core/init.php';
+$instance = DB::getInstance();
+
+$instance->query("SELECT * FROM articles");
+
+$results = $instance->results();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +32,18 @@
                 <img src="images/slider/s3.jpg" alt="">
                 <img src="images/slider/s1.jpg" id="firstClone" alt="">
             </div>
+        </div>
+        <div class="article_1">
+            <h2><?php echo $results[0]->article_name; ?></h2>
+            <p><?php echo $results[0]->article_content; ?></p>
+        </div>
+        <div class="article_2">
+            <h2><?php echo $results[1]->article_name; ?></h2>
+            <p><?php echo $results[1]->article_content; ?></p>
+        </div>
+        <div class="article_3">
+            <h2><?php echo $results[2]->article_name; ?></h2>
+            <p><?php echo $results[2]->article_content; ?></p>
         </div>
     </div>
     <?php include 'components/footer.php' ?>
