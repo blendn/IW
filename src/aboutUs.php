@@ -1,3 +1,6 @@
+<?php
+require_once 'core/init.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -8,32 +11,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" type="text/css" href="styles/about.css">
-    <link rel="stylesheet" type="text/css" href="styles/header.css">
 
 </head>
 
 <body>
-    <nav>
-        <div class="logo">
-            <h1>Dusty Headphone<span>s</span></h1>
-        </div>
-
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#Products">Products</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="login.html">Log In</a></li>
-        </ul>
-
-        <div class="icons">
-            <i class="fa-solid fa-heart"></i>
-            <i class="fa-solid fa-cart-shopping"></i>
-            <i class="fa-solid fa-user"></i>
-        </div>
-    </nav>
+    
+    <?php include 'components/nav.php'; ?>
 
     <div class="section">
         <div class="container">
@@ -73,6 +58,9 @@
             </div>
         </div>
     </div>
+
+    <?php include 'components/footer.php'; ?>
+
 </body>
 
 </html>
