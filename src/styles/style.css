@@ -100,7 +100,6 @@ html {
 
 section {
     width: 100vw;
-    height: 100vh;
 }
 section .main {
     height: 100vh;
@@ -382,13 +381,13 @@ section .main .button:hover i {
 
 footer {
     width: 100%;
+    background: #f3f1f1;
 }
 
 footer .footer_main {
-    width: 100%;
-    background: #f3f1f1;
     display: flex;
     justify-content: space-around;
+    margin-top: 4rem;
 }
 
 footer .footer_main .tag {
@@ -436,8 +435,8 @@ footer .footer_main .tag .social_link a {
     overflow: hidden;
 }
 
-/* styles to be applied for devices w/ width <= 320 */
-@media (max-width: 320px) {
+/* styles to be applied for devices w/ width <= 425 */
+@media (max-width: 425px) {
     nav .logo h1, span {
         font-size: 30px;
     }
@@ -446,7 +445,7 @@ footer .footer_main .tag .social_link a {
     }
 
     .products .box {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 /* styles to be applied for devices w/ width <= 768 */
@@ -468,6 +467,12 @@ footer .footer_main .tag .social_link a {
 
     .products .box {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .footer_main {
+        flex-direction: column;
+        width: 70%;
+        margin: auto;
     }
 } 
 
